@@ -159,10 +159,22 @@ Lastly, convert the result string to integer to meet with the requirement.</p>
     <ul>
       
         <li class="is-active" data-tab="solution-0">
-          <a><span>Python </span></a>
+          <a><span>C++ </span></a>
         </li>
       
         <li data-tab="solution-1">
+          <a><span>Java </span></a>
+        </li>
+      
+        <li data-tab="solution-2">
+          <a><span>JavaScript </span></a>
+        </li>
+      
+        <li data-tab="solution-3">
+          <a><span>Python </span></a>
+        </li>
+      
+        <li data-tab="solution-4">
           <a><span>Ruby </span></a>
         </li>
       
@@ -173,6 +185,51 @@ Lastly, convert the result string to integer to meet with the requirement.</p>
   <div class="container box">
     
       <div class="is-active tab-content" data-content="solution-0">
+<pre><code class="language-cpp">class Maximum69Number {
+public:
+    int maximum69Number (int num) {
+        std::string s = std::to_string(num);
+        std::size_t found = s.find("6");
+        if (found != std::string::npos) {
+            s.replace(found, 1, "9");
+        }
+        return std::stoi(s);
+    }
+};
+</code></pre>
+</div>
+    
+      <div class="tab-content" data-content="solution-1">
+<pre><code class="language-java">class Maximum69Number {
+    public int maximum69Number (int num) {
+        String s = String.valueOf(num);
+        int found = s.indexOf("6");
+        if (found &gt;= 0) {
+            s = s.replaceFirst("6", "9");
+        }
+        return Integer.parseInt(s);
+    }
+}
+</code></pre>
+</div>
+    
+      <div class="tab-content" data-content="solution-2">
+<pre><code class="language-js">/**
+ * @param {number} num
+ * @return {number}
+ */
+var maximum69Number  = function(num) {
+        let s = num.toString();
+        let found = s.indexOf("6");
+        if (found &gt;= 0) {
+            s = s.replace('6', '9');
+        }
+        return parseInt(s);
+    };
+</code></pre>
+</div>
+    
+      <div class="tab-content" data-content="solution-3">
 <pre><code class="language-python">class Maximum69Number:
     def maximum69Number (self, num: int) -&gt; int:
         s = str(num)
@@ -183,7 +240,7 @@ Lastly, convert the result string to integer to meet with the requirement.</p>
 </code></pre>
 </div>
     
-      <div class="tab-content" data-content="solution-1">
+      <div class="tab-content" data-content="solution-4">
 <pre><code class="language-ruby"># @param {Integer} num
 # @return {Integer}
 def maximum69_number (num)
